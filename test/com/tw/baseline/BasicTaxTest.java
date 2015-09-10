@@ -33,4 +33,11 @@ public class BasicTaxTest {
 
         assertEquals(0.0, basicSalesTax.calculateBasicTax(), 0.0d);
     }
+
+    @Test
+    public void shouldReturnZeroIfItemIsInExemptedCategoryExamplePills() {
+        BasicTax basicSalesTax = new BasicTax("pills", 10.0);
+
+        assertEquals(0.0, basicSalesTax.calculateBasicTax(), 0.0d);
+    }
 }
