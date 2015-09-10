@@ -21,9 +21,10 @@ public class TotalSalesTaxTest {
     }
 
     @Test
-    public void shouldCalculateTotalTaxForItemWhichIsNonImportedButExempted() {
-        TotalSalesTax totalSalesTax = new TotalSalesTax("any imported good", 100.0);
+    public void shouldCalculateTotalTaxForItemWhichIsNonImportedButNonExempted() {
+        TotalSalesTax totalSalesTax = new TotalSalesTax("any item", 100.0);
 
         assertEquals(10.0, totalSalesTax.calculateTotalTax(), 0.0000);
     }
+
 }
