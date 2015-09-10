@@ -55,4 +55,12 @@ public class TotalSalesTaxTest {
         assertEquals(16.489, totalSalesTax.totalPriceIncludingTax(), 0.000);
     }
 
+    @Test
+    public void shouldReturnTotalPriceForItemWhichIsNotExemptedButImported() {
+        TotalSalesTax totalSalesTax = new TotalSalesTax(1, "any imported good", 10.0);
+
+        assertEquals(16.0, totalSalesTax.totalPriceIncludingTax(), 0.000);
+    }
+
+
 }
