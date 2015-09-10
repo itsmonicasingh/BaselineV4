@@ -20,8 +20,8 @@ public class AdditionalTax {
     }
 
     public double calculateAdditionalTax() {
-        if (!this.isImported())
-            return 0.0;
+        if (this.isImported())
+            return 0.5 * itemPrice;
         return 0.0;
     }
 }
