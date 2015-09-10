@@ -34,4 +34,11 @@ public class TotalSalesTaxTest {
         assertEquals(60.0, totalSalesTax.calculateTotalTax(), 0.0000);
     }
 
+    @Test
+    public void shouldCalculateTotalTaxOnGivenCommodityWhichIsExemptedButImported() {
+        TotalSalesTax totalSalesTax = new TotalSalesTax(1, "imported box of chocolates", 10.0);
+
+        assertEquals(6.0, totalSalesTax.calculateTotalTax(), 0.0000);
+    }
+
 }
