@@ -5,14 +5,10 @@ public class TotalSalesTax {
 
     private String itemName;
     private double itemPrice;
-    private  int noOfItems;
-
 
     public TotalSalesTax(int noOfItems, String itemName, double itemPrice) {
         this.itemName = itemName;
         this.itemPrice = itemPrice;
-        this.noOfItems = noOfItems;
-
     }
 
     public double calculateTotalTax() {
@@ -22,6 +18,6 @@ public class TotalSalesTax {
     }
 
     public double totalPriceIncludingTax() {
-        return 0.0;
+        return (itemPrice + this.calculateTotalTax());
     }
 }
