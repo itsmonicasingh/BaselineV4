@@ -12,4 +12,11 @@ public class TotalSalesTaxTest {
 
         assertEquals(0.0, totalSalesTax.calculateTotalTax(), 0.0d);
     }
+
+    @Test
+    public void shouldReturnTotalTaxForItemWhichIsExemptedAndNotImported() {
+        TotalSalesTax totalSalesTax = new TotalSalesTax("i am exempted and not from outside so i am totally tax free", 10.0);
+
+        assertEquals(0.0, totalSalesTax.calculateTotalTax(), 0.0);
+    }
 }
