@@ -41,4 +41,11 @@ public class TotalSalesTaxTest {
         assertEquals(6.0, totalSalesTax.calculateTotalTax(), 0.0000);
     }
 
+    @Test
+    public void shouldReturnTotalPriceIncludingTaxAsZeroIfPriceIsZero() {
+        TotalSalesTax totalSalesTax = new TotalSalesTax(1, "any good", 0.0);
+
+        assertEquals(0.0, totalSalesTax.totalPriceIncludingTax(), 0.000);
+    }
+
 }

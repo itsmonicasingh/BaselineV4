@@ -21,4 +21,7 @@ public class TotalSalesTax {
         return (basicTax.calculateBasicTax() + additionalTax.calculateAdditionalTax());
     }
 
+    public double totalPriceIncludingTax() {
+        return 0.0;
+    }
 }
