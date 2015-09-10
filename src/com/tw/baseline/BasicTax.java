@@ -21,6 +21,6 @@ public class BasicTax {
         if (isExempted.contains(itemName)) {
             return 0.0;
         }
-        return 0.0;
+        return 0.10 * itemPrice;
     }
 }

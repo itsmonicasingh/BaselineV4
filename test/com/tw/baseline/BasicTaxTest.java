@@ -40,4 +40,11 @@ public class BasicTaxTest {
 
         assertEquals(0.0, basicSalesTax.calculateBasicTax(), 0.0d);
     }
+
+    @Test
+    public void shouldReturnTenPercentOfPriceIfItemIsNotExempted() {
+        BasicTax basicSalesTax = new BasicTax("U'll have to pay tax now", 20);
+
+        assertEquals(2, basicSalesTax.calculateBasicTax(), 0.0d);
+    }
 }
