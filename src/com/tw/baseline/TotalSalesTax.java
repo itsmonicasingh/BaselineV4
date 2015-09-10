@@ -12,6 +12,7 @@ public class TotalSalesTax {
     }
 
     public double calculateTotalTax() {
-        return 0;
+        BasicTax basicTax = new BasicTax(itemName, itemPrice);
+        return (basicTax.calculateBasicTax());
     }
 }

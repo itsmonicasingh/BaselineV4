@@ -19,4 +19,11 @@ public class TotalSalesTaxTest {
 
         assertEquals(0.0, totalSalesTax.calculateTotalTax(), 0.0);
     }
+
+    @Test
+    public void shouldCalculateTotalTaxForItemWhichIsNonImportedButExempted() {
+        TotalSalesTax totalSalesTax = new TotalSalesTax("any imported good", 100.0);
+
+        assertEquals(10.0, totalSalesTax.calculateTotalTax(), 0.0000);
+    }
 }
