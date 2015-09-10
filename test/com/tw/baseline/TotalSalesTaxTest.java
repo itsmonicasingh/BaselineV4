@@ -71,10 +71,16 @@ public class TotalSalesTaxTest {
 
     @Test
     public void shouldReturnTotalPriceForItemWhichIsExemptedButImported() {
-        TotalSalesTax totalSalesTax = new TotalSalesTax(1, "box of imported chocolates", 100);
+        TotalSalesTax totalSalesTax = new TotalSalesTax(1, "box of imported chocolates", 100.0);
 
         assertEquals(160.0, totalSalesTax.totalPriceIncludingTax(), 0.000);
     }
 
+    @Test
+    public void shouldReturnTheReceiptDetailsForThePurchasedItem() {
+        TotalSalesTax totalSalesTax = new TotalSalesTax(1, "box of imported chocolates", 10.0);
+
+        assertEquals("1 box of imported chocolates: 16.0", totalSalesTax.printReceipt());
+    }
 
 }
